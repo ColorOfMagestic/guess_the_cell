@@ -2,6 +2,7 @@
 
 const cells = document.querySelectorAll('td');
 const findOut = document.querySelector('.find-out');
+const timer = document.querySelector('.timer');
 const startOver = document.querySelector('.start_over');
 
 // Добавление атрибутов к ячейкам
@@ -26,10 +27,32 @@ let uniqueNums = function () {
 };
 
 let nums = uniqueNums();
-console.log(nums);
+
+// Таймер
+let currTime;
+
+let ooTimer = function () {
+    const timerCB = function () {
+        const minutes = String(Math.trunc(time / 60)).padStart(2, '0');
+        const seconds = String(time % 60).padStart(2, '0');
+        timer.textContent = `${minutes}:${seconds}`;
+        if (time === 0) {
+            alert('Вы проиграли :(');
+            resetGame();
+            clearInterval(mainTimer);
+        }
+        time--;
+    };
+    let time = 300;
+    timerCB();
+    let mainTimer = setInterval(timerCB, 1000);
+    return mainTimer;
+};
+currTime = ooTimer();
+
 // Имплементация работы программы
 
-let count = 2;
+let count = 10;
 cells.forEach((item) => {
     item.addEventListener('click', function () {
         if (nums.includes(+this.getAttribute('num'))) {
@@ -56,5 +79,6 @@ function resetGame() {
         item.classList.remove('is_false');
     });
     nums = uniqueNums();
-    console.log(nums);
+    clearInterval(currTime);
+    currTime = ooTimer();
 }
