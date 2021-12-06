@@ -1,0 +1,54 @@
+body {
+  background: linear-gradient(90deg, #22df22, #1da51d);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+}
+
+
+table {
+  margin-left: auto;
+  background-color: rgb(211, 211, 247);
+  border: 1px solid black;
+}
+
+table tr td {
+  width: 50px;
+  height: 50px;
+  background-color: #fdfff5;
+  border: 1px solid black;
+}
+
+.find {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+  margin:0 auto;
+}
+.find-out {
+  font-size: 24px;
+  text-align: center;
+}
+.start_over {
+  width: 150px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-size: 16px;
+  border:2px solid #fff;
+  background-color: lime;
+  border-radius: 10px;
+}
+
+.start_over:active {
+  transform: translate(2px,2px);
+}
+.is_true {
+  background-color: #008000;
+}
+.is_false {
+  background-color: tomato;
+}
+
