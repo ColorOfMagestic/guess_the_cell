@@ -1,9 +1,16 @@
 body {
   background: linear-gradient(90deg, #22df22, #1da51d);
+}
+
+h1 {
+  text-align: center;
+}
+
+.wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 100px;
+  padding-top: 40px;
 }
 
 
@@ -27,7 +34,8 @@ table tr td {
   
   margin:0 auto;
 }
-.find-out {
+.find-out,
+.timer {
   font-size: 24px;
   text-align: center;
 }
