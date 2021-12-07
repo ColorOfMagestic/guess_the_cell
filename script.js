@@ -43,7 +43,7 @@ let ooTimer = function () {
         }
         time--;
     };
-    let time = 300;
+    let time = 60;
     timerCB();
     let mainTimer = setInterval(timerCB, 1000);
     return mainTimer;
